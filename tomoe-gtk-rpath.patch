@@ -1,0 +1,26 @@
+diff -up ./configure.ac.rpath ./configure.ac
+--- ./configure.ac.rpath	2007-06-12 18:17:23.000000000 +1000
++++ ./configure.ac	2009-05-13 15:43:45.000000000 +1000
+@@ -76,6 +76,14 @@ if test "x$GCC" = "xyes"; then
+   fi
+ fi
+ 
++# Add rpath check
++AC_MSG_CHECKING(whether to use rpath)
++AC_ARG_ENABLE(rpath,
++	[AC_HELP_STRING([--disable-rpath],
++			[Patches libtool to not use rpath in the libraries produced.])],
++	[xerces_cv_rpath="$enable_rpath"], [xerces_cv_rpath="yes"])
++AC_MSG_RESULT($xerces_cv_rpath)
++
+ # for dump stroke data
+ AC_ARG_ENABLE(dumpstroke, [  --enable-dumpstroke         Enable dump of stroke data])
+ if test x"$enable_dumpstroke" = "xyes"; then
+diff -up ./Makefile.am.rpath ./Makefile.am
+--- ./Makefile.am.rpath	2007-06-07 15:36:06.000000000 +1000
++++ ./Makefile.am	2009-05-13 15:44:38.000000000 +1000
+@@ -1,3 +1,4 @@
++ACLOCAL_AMFLAGS=-I macros
+ SUBDIRS=src data po test doc bindings
+ 
+ EXTRA_DIST = autogen.sh tomoe-gtk.pc

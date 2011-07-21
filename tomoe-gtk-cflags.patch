@@ -1,0 +1,24 @@
+diff -up ./bindings/python/Makefile.am.cflags ./bindings/python/Makefile.am
+--- ./bindings/python/Makefile.am.cflags	2009-07-29 15:20:50.000000000 +1000
++++ ./bindings/python/Makefile.am	2009-07-29 15:21:05.000000000 +1000
+@@ -8,6 +8,7 @@ INCLUDES =			\
+ 	$(PYGTK_CFLAGS)		\
+ 	$(GTK2_CFLAGS)		\
+ 	$(TOMOE_CFLAGS)		\
++	$(RPM_CFLAGS)		\
+ 	-I$(top_srcdir)/src	\
+ 	-I$(top_builddir)/src
+ 
+diff -up ./src/Makefile.am.cflags ./src/Makefile.am
+--- ./src/Makefile.am.cflags	2007-06-11 13:56:00.000000000 +1000
++++ ./src/Makefile.am	2009-07-29 15:22:22.000000000 +1000
+@@ -1,7 +1,8 @@
+ AM_CPPFLAGS =								\
+ 	-DSYSCONFDIR=\""$(sysconfdir)"\"				\
+ 	-DDATADIR=\""$(datadir)"\"					\
+-	-DTOMOEGTKDATADIR=\""$(datadir)"/$(PACKAGE)\"
++	-DTOMOEGTKDATADIR=\""$(datadir)"/$(PACKAGE)\"			\
++	$(RPM_CFLAGS)
+ 
+ INCLUDES = $(GTK2_CFLAGS) $(TOMOE_CFLAGS) $(GUCHARMAP_CFLAGS)
+ LIBS     = $(GTK2_LIBS)   $(TOMOE_LIBS)   $(GUCHARMAP_LIBS)
