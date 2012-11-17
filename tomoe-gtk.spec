@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	gucharmap	# gucharmap support [>= 1.4.0 < 3.0]
+%bcond_without	gucharmap	# gucharmap support
 %bcond_without	python		# build without python bindings
 %bcond_without	static_libs	# don't build static libraries
 #
@@ -16,6 +16,7 @@ Source0:	http://downloads.sourceforge.net/tomoe/%{name}-%{version}.tar.gz
 # Source0-md5:	bd49ac64549d8a7ab092bea1c1dc04fc
 Patch0:		%{name}-rpath.patch
 Patch1:		%{name}-cflags.patch
+Patch2:		%{name}-gucharmap.patch
 URL:		http://scim-imengine.sourceforge.jp/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -92,6 +93,7 @@ Wiązania Tomoe-GTK dla Pythona.
 %setup -q
 %patch0 -p0
 %patch1 -p0
+%patch2 -p1
 
 %build
 %{__libtoolize}
