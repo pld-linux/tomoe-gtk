@@ -20,7 +20,7 @@ Patch2:		%{name}-gucharmap.patch
 URL:		http://scim-imengine.sourceforge.jp/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 %{?with_gucharmap:BuildRequires:	gucharmap2-devel >= 1.4.0}
