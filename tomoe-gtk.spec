@@ -9,7 +9,7 @@ Summary:	GTK library for tomoe for Japanese and Chinese handwritten input
 Summary(pl.UTF-8):	Biblioteka GTK dla tomoe do wprowadzania japońskiego i chińskiego pisma ręcznego
 Name:		tomoe-gtk
 Version:	0.6.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/tomoe/%{name}-%{version}.tar.gz
